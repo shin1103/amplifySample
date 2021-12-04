@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/items",
+      "lambdaFunction": "angularManageItems",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/items"
+    }
+  ],
+  "resourceName": "angularTestAPI",
+  "apiName": "angularTestAPI",
+  "functionArns": [
+    {
+      "lambdaFunction": "angularManageItems"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-angularamplifypc-dev-73222-authRole",
+    "unAuthRoleName": "amplify-angularamplifypc-dev-73222-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "angularManageItems",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
