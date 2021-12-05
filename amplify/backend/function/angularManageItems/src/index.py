@@ -4,10 +4,24 @@ import boto3
 # テーブルスキャン
 # https://business.ntt-east.co.jp/content/cloudsolution/column-try-20.html
 def operation_scan(table):
+    print('scan')
     scanData = table.scan()	# scan()メソッドでテーブル内をscan。一覧を取得
     items = scanData['Items']	# 応答からレコード一覧を抽出
     print(items)	# レコード一覧を表示
     return scanData
+
+def operation_get(table, itemid):
+    print('get')
+    getResponse = table.get_item(
+        Key={
+            'id': itemid
+        }
+    )
+    print(getResponse)
+    if 'Item' in getResponse.keys():	# 応答からレコード一覧を抽出
+        return getResponse['Item']
+    else:
+        return None
 
 # レコード追加・更新
 def operation_put(table, body):
@@ -61,7 +75,18 @@ def handler(event, context):
 
     response_body: dict = None
     if event['httpMethod'] == 'GET':
-        response_body = operation_scan(table)
+        if event['queryStringParameters']:
+            print('aaa')
+            print(type(event['queryStringParameters']))
+            print(event['queryStringParameters'])
+            if event['queryStringParameters']['itemid']:
+                print('bbb')
+                print(type(event['queryStringParameters']['itemid']))
+                print(event['queryStringParameters']['itemid'])
+
+            response_body = operation_get(table, event['queryStringParameters']['itemid'])
+        else:
+            response_body = operation_scan(table)
 
     if event['httpMethod'] == 'POST' or event['httpMethod'] == 'PUT':
         response_body = operation_put(table, request_body)
