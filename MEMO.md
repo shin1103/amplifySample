@@ -52,6 +52,8 @@ awsExampleManagedPolicyParameterOne,awsExampleManagedPolicyParameterTwoに具体
 https://business.ntt-east.co.jp/content/cloudsolution/column-try-20.html
 上記サイトを参考に作成。いくつか動かないところがあったり、APIGatewayとLambdaが密結合になるやり方が良くないので、こちらで修正。
 
+https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/using-identity-based-policies.html
+権限
 # PythonのラムダがDeployできない
 Cloud9のEC2はPythonのバージョンが3.7系にあるのに対し、Amplifyは3.8系であることが求められる。
 そのため、pyenvをインストールして異なるバージョンを入れる。
@@ -62,3 +64,7 @@ https://github.com/pyenv/pyenv
 pyenv install 3.8.12
 pyenv global 3.8.12
 ```
+# クエリ文字列の設定
+https://aws.amazon.com/jp/premiumsupport/knowledge-center/api-gateway-proxy-path-parameter-error/
+はパスパラメータの設定だった。上記サイトのリンクにクエリ文字列の設定方法がのっていた。
+https://swagger.io/docs/specification/2-0/describing-parameters/

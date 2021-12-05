@@ -126,6 +126,12 @@
                     "schema": {
                       "$ref": "#/definitions/RequestSchema"
                     }
+                  },
+                  {
+                    "in": "query",
+                    "name": "itemid",
+                    "type": "string",
+                    "description": "Query Parameters for itemid"
                   }
                 ],
                 "responses": {
@@ -221,6 +227,12 @@
                     "schema": {
                       "$ref": "#/definitions/RequestSchema"
                     }
+                  },
+                  {
+                    "in": "query",
+                    "name": "itemid",
+                    "type": "string",
+                    "description": "Query Parameters for itemid"
                   }
                 ],
                 "responses": {
