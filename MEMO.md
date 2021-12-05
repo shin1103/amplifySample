@@ -54,6 +54,10 @@ https://business.ntt-east.co.jp/content/cloudsolution/column-try-20.html
 
 https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/using-identity-based-policies.html
 権限
+
+NTTのサイトちょっと微妙でこちらの方がいい感じ。
+https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
+
 # PythonのラムダがDeployできない
 Cloud9のEC2はPythonのバージョンが3.7系にあるのに対し、Amplifyは3.8系であることが求められる。
 そのため、pyenvをインストールして異なるバージョンを入れる。
